@@ -1,5 +1,4 @@
 package com.tw.cn.cap.gtb.todo;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,11 +11,10 @@ public class App {
         throw new UnsupportedOperationException() ;
     }
 
-    public List<String> run() {
-        try {
-            return Files.readAllLines(Paths.get("/Users/Dell/.todo/tasks")) ;
-        } catch (IOException e) {
-            throw new TodoCannotReadFileException();
-        }
+    public List<String> run() throws IOException {
+        List<String> list = Files.readAllLines(Paths.get("E:\\gtb-2022-wang-tianying\\demo-tdd\\app\\src\\main\\java\\com\\tw\\cn\\cap\\gtb\\todo\\tasks"));
+        return list;
+
     }
 }
+

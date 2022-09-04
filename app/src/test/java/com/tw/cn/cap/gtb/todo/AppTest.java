@@ -6,11 +6,13 @@ package com.tw.cn.cap.gtb.todo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 class AppTest {
-    @Test void should_list_existing_tasks() {
+    @Test void should_list_existing_tasks() throws IOException {
         List<String> result = new App().run();
-        Assertions.assertEquals(List.of("1 caonishizhu"),result);
+        Assertions.assertEquals(Arrays.asList("Task 01"),result);
   }
 }
