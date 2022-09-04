@@ -13,6 +13,6 @@ import java.util.List;
 class AppTest {
     @Test void should_list_existing_tasks() throws IOException {
         List<String> result = new App().run();
-        Assertions.assertEquals(Arrays.asList("Task 01"),result);
+        Assertions.assertEquals(Arrays.asList("1 caonishizhu"),result);
   }
 }
