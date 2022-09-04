@@ -3,12 +3,14 @@
  */
 package com.tw.cn.cap.gtb.todo;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-    }
+    @Test void should_list_existing_tasks() {
+        List<String> result = new App().run();
+        Assertions.assertEquals(List.of("1 caonishizhu"),result);
+  }
 }
