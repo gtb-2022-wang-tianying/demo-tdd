@@ -12,11 +12,20 @@ public class App {
         throw new UnsupportedOperationException();
     }
 
-    public List<String> run() throws IOException {
+    public List<String> run() {
+        List<String> lines = readTaskLines();
         List<String> list = new ArrayList<>();
         list.add("# To be done");
-        list.addAll(Files.readAllLines(Constants.TASKS_FILE_PATH));
+        list.addAll(lines);
         return list;
+    }
+
+    private List<String> readTaskLines() {
+        try {
+            return Files.readAllLines(Constants.TASKS_FILE_PATH);
+        } catch (IOException e) {
+            throw new TodoCannotReadFileException();
+        }
     }
 }
 
